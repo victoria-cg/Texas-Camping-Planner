@@ -26,4 +26,3 @@ async function userCity(){
   var data = await response.json();
   console.log(data);
 }
-userCity()
