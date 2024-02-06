@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 //function to get data for SerpAPI Google Flights API. Currently using JSON placeholder API -VG
 function getApi() {
     //sets variable to get the URL for the API -VG
@@ -28,6 +26,3 @@ async function userCity(){
   var data = await response.json();
   console.log(data);
 }
-userCity()
-
->>>>>>> Stashed changes
