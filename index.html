@@ -8,6 +8,11 @@
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    <title>Texas Camping Planner</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+      href="./assets/styles.css"
     />
     <link
     rel="stylesheet"
@@ -15,6 +20,17 @@
   />
   </head>
   <body>
+    <div class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <!-- Any other Bulma elements you want -->
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+  
+  </div>
+    </div>
+
     <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="https://bulma.io">
@@ -40,7 +56,11 @@
 
           <a class="navbar-item"> Live Weather </a>
 
-        </div>
+          <button class="js-modal-trigger" data-target="modal-js-example">
+            Open JS example modal
+          </button>
+
+         </div>
     </nav>
     <!-- added a class for hero-photo to be able to style with css accordingly CO -->
  
@@ -86,7 +106,9 @@
       <div class="weather-details">
       </div>
     </div>
-    
+
+
+  
   </body>
   <script src="./assets/script.js"></script>
 </html>
