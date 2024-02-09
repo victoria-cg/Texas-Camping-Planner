@@ -90,7 +90,7 @@ async function campgrounds(){
      var camp4SitesImg = document.createElement('img');
 
      camp4SitesNum.textContent = data.data[3].campsites.totalSites;
-     camp4SitesEmail.textContent = data.data[3].contacts.emailAddresses[0].emailAddress;
+     camp4SitesEmail.textContent = "No Email Avaliable";
      camp4SitesDes.textContent = data.data[3].description;
      camp4SitesImg.innerHTML = data.data[3].images[0].url;
 
@@ -100,6 +100,7 @@ async function campgrounds(){
      camp4.appendChild(camp4SitesImg);
     }
 
+    //this is the information for blue west
     var camp5 = document.getElementById('camp5');
     if(element.id === 'camp5'){
      console.log('true');
@@ -118,8 +119,103 @@ async function campgrounds(){
      camp5.appendChild(camp5SitesDes);
      camp5.appendChild(camp5SitesImg);
     }
-   })
 
+    var camp6 = document.getElementById('camp6');
+    if(element.id === 'camp6'){
+     console.log('true');
+     var camp6SitesNum = document.createElement('p');
+     var camp6SitesEmail = document.createElement('p');
+     var camp6SitesDes = document.createElement('p');
+     var camp6SitesImg = document.createElement('img');
+
+     camp6SitesNum.textContent = data.data[5].campsites.totalSites;
+     camp6SitesEmail.textContent = data.data[5].contacts.emailAddresses[0].emailAddress;
+     camp6SitesDes.textContent = data.data[5].description;
+     camp6SitesImg.innerHTML = data.data[5].images[0].url;
+
+     camp6.appendChild(camp6SitesNum);
+     camp6.appendChild(camp6SitesEmail);
+     camp6.appendChild(camp6SitesDes);
+     camp6.appendChild(camp6SitesImg);
+    }
+   
+
+   var camp7 = document.getElementById('camp7');
+   if(element.id === 'camp7'){
+    console.log('true');
+    var camp7SitesNum = document.createElement('p');
+    var camp7SitesEmail = document.createElement('p');
+    var camp7SitesDes = document.createElement('p');
+    var camp7SitesImg = document.createElement('img');
+
+    camp7SitesNum.textContent = data.data[6].campsites.totalSites;
+    camp7SitesEmail.textContent = "No Email Avaliable";
+    camp7SitesDes.textContent = data.data[6].description;
+    camp7SitesImg.innerHTML = data.data[6].images[0].url;
+
+    camp7.appendChild(camp7SitesNum);
+    camp7.appendChild(camp7SitesEmail);
+    camp7.appendChild(camp7SitesDes);
+    camp7.appendChild(camp7SitesImg);
+    }
+
+   var camp8 = document.getElementById('camp8');
+   if(element.id === 'camp5'){
+    console.log('true');
+    var camp8SitesNum = document.createElement('p');
+    var camp8SitesEmail = document.createElement('p');
+    var camp8SitesDes = document.createElement('p');
+    var camp8SitesImg = document.createElement('img');
+
+    camp8SitesNum.textContent = data.data[7].campsites.totalSites;
+    camp8SitesEmail.textContent = data.data[7].contacts.emailAddresses[0].emailAddress;
+    camp8SitesDes.textContent = data.data[7].description;
+    camp8SitesImg.innerHTML = data.data[7].images[0].url;
+
+    camp8.appendChild(camp8SitesNum);
+    camp8.appendChild(camp8SitesEmail);
+    camp8.appendChild(camp8SitesDes);
+    camp8.appendChild(camp8SitesImg);
+   }
+
+   var camp9 = document.getElementById('camp9');
+   if(element.id === 'camp9'){
+    console.log('true');
+    var camp9SitesNum = document.createElement('p');
+    var camp9SitesEmail = document.createElement('p');
+    var camp9SitesDes = document.createElement('p');
+    var camp9SitesImg = document.createElement('img');
+
+    camp9SitesNum.textContent = data.data[8].campsites.totalSites;
+    camp9SitesEmail.textContent = "No Email Avaliable";
+    camp9SitesDes.textContent = data.data[8].description;
+    camp9SitesImg.innerHTML = data.data[8].images[0].url;
+
+    camp9.appendChild(camp9SitesNum);
+    camp9.appendChild(camp9SitesEmail);
+    camp9.appendChild(camp9SitesDes);
+    camp9.appendChild(camp9SitesImg);
+   }
+
+   var camp10 = document.getElementById('camp10');
+   if(element.id === 'camp10'){
+    console.log('true');
+    var camp10SitesNum = document.createElement('p');
+    var camp10SitesEmail = document.createElement('p');
+    var camp10SitesDes = document.createElement('p');
+    var camp10SitesImg = document.createElement('img');
+
+    camp10SitesNum.textContent = data.data[9].campsites.totalSites;
+    camp10SitesEmail.textContent = data.data[9].contacts.emailAddresses[0].emailAddress;
+    camp10SitesDes.textContent = data.data[9].description;
+    camp10SitesImg.innerHTML = data.data[9].images[0].url;
+
+    camp10.appendChild(camp10SitesNum);
+    camp10.appendChild(camp10SitesEmail);
+    camp10.appendChild(camp10SitesDes);
+    camp10.appendChild(camp10SitesImg);
+   }
+  })
 })
 }
 
