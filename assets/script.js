@@ -23,6 +23,7 @@ async function campgrounds(){
   //this is a function calling to every li with class of camp
   document.querySelectorAll('.camp').forEach(element =>{
     element.addEventListener('click', event =>{
+      event.preventDefault();
       var camp1 = document.getElementById('camp1');
      if(element.id === 'camp1'){
       console.log('true');
