@@ -1,15 +1,5 @@
-html {
-    height: 100%;
-    background-color: #bfb6b6;
-}
+/* hero css below to ensure image fits width of page */
 
-body {
-    
-}
-
-.hero-image {
-height: 100%;
-background-size: cover;
-background-position: center; 
-position: relative;
+#hero-image img {
+width: 100%
 }
