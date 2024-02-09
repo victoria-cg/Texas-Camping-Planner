@@ -41,8 +41,29 @@ async function campgrounds(){
       camp1.appendChild(camp1SitesDes);
       camp1.appendChild(camp1SitesImg);
      } 
-    })
-  })
+    
+//this is the start of the Bird Island Basin Campground
+    var camp2 = document.getElementById('camp2');
+    if(element.id === 'camp2'){
+     console.log('true');
+     var camp2SitesNum = document.createElement('p');
+     var camp2SitesEmail = document.createElement('p');
+     var camp2SitesDes = document.createElement('p');
+     var camp2SitesImg = document.createElement('img');
 
+     camp2SitesNum.textContent = data.data[1].campsites.totalSites;
+     camp2SitesEmail.textContent = data.data[1].contacts.emailAddresses[0].emailAddress;
+     camp2SitesDes.textContent = data.data[1].description;
+     camp2SitesImg.innerHTML = data.data[1].images[1].url;
+
+     camp2.appendChild(camp2SitesNum);
+     camp2.appendChild(camp2SitesEmail);
+     camp2.appendChild(camp2SitesDes);
+     camp2.appendChild(camp2SitesImg);
+    } 
+   })
+
+})
 }
+
 campgrounds()
