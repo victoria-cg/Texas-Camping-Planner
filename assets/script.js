@@ -61,6 +61,63 @@ async function campgrounds(){
      camp2.appendChild(camp2SitesDes);
      camp2.appendChild(camp2SitesImg);
     } 
+//this is the information imput for Blue Creek
+    var camp3 = document.getElementById('camp3');
+    if(element.id === 'camp3'){
+     console.log('true');
+     var camp3SitesNum = document.createElement('p');
+     var camp3SitesEmail = document.createElement('p');
+     var camp3SitesDes = document.createElement('p');
+     var camp3SitesImg = document.createElement('img');
+
+     camp3SitesNum.textContent = data.data[2].campsites.totalSites;
+     camp3SitesEmail.textContent = data.data[2].contacts.emailAddresses[0].emailAddress;
+     camp3SitesDes.textContent = data.data[2].description;
+     camp3SitesImg.innerHTML = data.data[2].images[0].url;
+
+     camp3.appendChild(camp3SitesNum);
+     camp3.appendChild(camp3SitesEmail);
+     camp3.appendChild(camp3SitesDes);
+     camp3.appendChild(camp3SitesImg);
+    }
+//this is the information for the blue ridge wilderness 
+    var camp4 = document.getElementById('camp4');
+    if(element.id === 'camp4'){
+     console.log('true');
+     var camp4SitesNum = document.createElement('p');
+     var camp4SitesEmail = document.createElement('p');
+     var camp4SitesDes = document.createElement('p');
+     var camp4SitesImg = document.createElement('img');
+
+     camp4SitesNum.textContent = data.data[3].campsites.totalSites;
+     camp4SitesEmail.textContent = data.data[3].contacts.emailAddresses[0].emailAddress;
+     camp4SitesDes.textContent = data.data[3].description;
+     camp4SitesImg.innerHTML = data.data[3].images[0].url;
+
+     camp4.appendChild(camp4SitesNum);
+     camp4.appendChild(camp4SitesEmail);
+     camp4.appendChild(camp4SitesDes);
+     camp4.appendChild(camp4SitesImg);
+    }
+
+    var camp5 = document.getElementById('camp5');
+    if(element.id === 'camp5'){
+     console.log('true');
+     var camp5SitesNum = document.createElement('p');
+     var camp5SitesEmail = document.createElement('p');
+     var camp5SitesDes = document.createElement('p');
+     var camp5SitesImg = document.createElement('img');
+
+     camp5SitesNum.textContent = data.data[4].campsites.totalSites;
+     camp5SitesEmail.textContent = data.data[4].contacts.emailAddresses[0].emailAddress;
+     camp5SitesDes.textContent = data.data[4].description;
+     camp5SitesImg.innerHTML = data.data[4].images[0].url;
+
+     camp5.appendChild(camp5SitesNum);
+     camp5.appendChild(camp5SitesEmail);
+     camp5.appendChild(camp5SitesDes);
+     camp5.appendChild(camp5SitesImg);
+    }
    })
 
 })
