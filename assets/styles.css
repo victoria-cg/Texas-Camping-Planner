@@ -4,4 +4,11 @@
 #hero-image img {
 width: 100%
 }
+.choose-location{
+    display: flex;
+    flex-direction: column;
 
+}
+.camp {
+padding-top:15px;
+} 
