@@ -19,5 +19,30 @@ async function campgrounds(){
   const response = await fetch(campurl);
   var data = await response.json();
   console.log(data);
+ 
+  //this is a function calling to every li with class of camp
+  document.querySelectorAll('.camp').forEach(element =>{
+    element.addEventListener('click', event =>{
+      var camp1 = document.getElementById('camp1');
+     if(element.id === 'camp1'){
+      console.log('true');
+      var camp1SitesNum = document.createElement('p');
+      var camp1SitesEmail = document.createElement('p');
+      var camp1SitesDes = document.createElement('p');
+      var camp1SitesImg = document.createElement('img');
+
+      camp1SitesNum.textContent = data.data[0].campsites.totalSites;
+      camp1SitesEmail.textContent = data.data[0].contacts.emailAddresses[0].emailAddress;
+      camp1SitesDes.textContent = data.data[0].description;
+      camp1SitesImg.innerHTML = data.data[0].images[1].url;
+
+      camp1.appendChild(camp1SitesNum);
+      camp1.appendChild(camp1SitesEmail);
+      camp1.appendChild(camp1SitesDes);
+      camp1.appendChild(camp1SitesImg);
+     } 
+    })
+  })
+
 }
 campgrounds()
