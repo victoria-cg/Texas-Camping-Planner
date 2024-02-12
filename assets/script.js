@@ -1,17 +1,18 @@
 
-// //These are variables so we can change the city the user looks for later in the project
-let apiKey = '826bbb162ffd06dab609a97389a04db7';
-let city = 'Houston';
+//These are variables so we can change the city the user looks for later in the project
+ let apiKey = '826bbb162ffd06dab609a97389a04db7';
+ var Lat = '29.512';
+ var Long = "-100.98";
 
-let queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=Imperial";
+ let queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + Lat + "&lon="+ Long +"&appid=" + apiKey +"&units=Imperial";
 
-//this is a function that turns the json data into data we can use
-async function userCity(){    
-  const response = await fetch(queryURL);
-  var data = await response.json();
-  console.log(data);
-}
-userCity()
+ //this is a function that turns the json data into data we can use
+  async function LatLongWeather(Lat, Long){    
+   const response = await fetch(queryURL);
+   var data = await response.json();
+   console.log(data);
+ }
+LatLongWeather()
 
 var campurl = "https://developer.nps.gov/api/v1/campgrounds?stateCode=TX&limit=10&api_key=u5CiPtHmqSiAgcizRWaAZxplrNDN9wXMsKSPUC47"
 
@@ -26,15 +27,16 @@ async function campgrounds(){
       event.preventDefault();
       var camp1 = document.getElementById('camp1');
      if(element.id === 'camp1'){
+      event.preventDefault();
       console.log('true');
       var camp1SitesNum = document.createElement('p');
       var camp1SitesEmail = document.createElement('p');
       var camp1SitesDes = document.createElement('p');
       var camp1SitesImg = document.createElement('img');
 
-      camp1SitesNum.textContent = data.data[0].campsites.totalSites;
-      camp1SitesEmail.textContent = data.data[0].contacts.emailAddresses[0].emailAddress;
-      camp1SitesDes.textContent = data.data[0].description;
+      camp1SitesNum.textContent = 'Number of campsites avaliable: ' +data.data[0].campsites.totalSites;
+      camp1SitesEmail.textContent = 'Contact Email: ' + data.data[0].contacts.emailAddresses[0].emailAddress;
+      camp1SitesDes.textContent = 'Description: ' + data.data[0].description;
       camp1SitesImg.innerHTML = data.data[0].images[1].url;
 
       camp1.appendChild(camp1SitesNum);
@@ -52,9 +54,9 @@ async function campgrounds(){
      var camp2SitesDes = document.createElement('p');
      var camp2SitesImg = document.createElement('img');
 
-     camp2SitesNum.textContent = data.data[1].campsites.totalSites;
-     camp2SitesEmail.textContent = data.data[1].contacts.emailAddresses[0].emailAddress;
-     camp2SitesDes.textContent = data.data[1].description;
+     camp2SitesNum.textContent = 'Number of campsites avaliable: ' +data.data[1].campsites.totalSites;
+     camp2SitesEmail.textContent ='Contact Email: ' + data.data[1].contacts.emailAddresses[0].emailAddress;
+     camp2SitesDes.textContent = 'Description: ' +data.data[1].description;
      camp2SitesImg.innerHTML = data.data[1].images[1].url;
 
      camp2.appendChild(camp2SitesNum);
@@ -71,9 +73,9 @@ async function campgrounds(){
      var camp3SitesDes = document.createElement('p');
      var camp3SitesImg = document.createElement('img');
 
-     camp3SitesNum.textContent = data.data[2].campsites.totalSites;
-     camp3SitesEmail.textContent = data.data[2].contacts.emailAddresses[0].emailAddress;
-     camp3SitesDes.textContent = data.data[2].description;
+     camp3SitesNum.textContent = 'Number of campsites avaliable: ' +data.data[2].campsites.totalSites;
+     camp3SitesEmail.textContent = 'Contact Email: ' +data.data[2].contacts.emailAddresses[0].emailAddress;
+     camp3SitesDes.textContent ='Description: ' + data.data[2].description;
      camp3SitesImg.innerHTML = data.data[2].images[0].url;
 
      camp3.appendChild(camp3SitesNum);
@@ -90,9 +92,9 @@ async function campgrounds(){
      var camp4SitesDes = document.createElement('p');
      var camp4SitesImg = document.createElement('img');
 
-     camp4SitesNum.textContent = data.data[3].campsites.totalSites;
+     camp4SitesNum.textContent = 'Number of campsites avaliable: ' +data.data[3].campsites.totalSites;
      camp4SitesEmail.textContent = "No Email Avaliable";
-     camp4SitesDes.textContent = data.data[3].description;
+     camp4SitesDes.textContent = 'Description: ' +data.data[3].description;
      camp4SitesImg.innerHTML = data.data[3].images[0].url;
 
      camp4.appendChild(camp4SitesNum);
@@ -110,9 +112,9 @@ async function campgrounds(){
      var camp5SitesDes = document.createElement('p');
      var camp5SitesImg = document.createElement('img');
 
-     camp5SitesNum.textContent = data.data[4].campsites.totalSites;
-     camp5SitesEmail.textContent = data.data[4].contacts.emailAddresses[0].emailAddress;
-     camp5SitesDes.textContent = data.data[4].description;
+     camp5SitesNum.textContent = 'Number of campsites avaliable: ' +data.data[4].campsites.totalSites;
+     camp5SitesEmail.textContent = 'Contact Email: ' +data.data[4].contacts.emailAddresses[0].emailAddress;
+     camp5SitesDes.textContent ='Description: ' + data.data[4].description;
      camp5SitesImg.innerHTML = data.data[4].images[0].url;
 
      camp5.appendChild(camp5SitesNum);
@@ -129,9 +131,9 @@ async function campgrounds(){
      var camp6SitesDes = document.createElement('p');
      var camp6SitesImg = document.createElement('img');
 
-     camp6SitesNum.textContent = data.data[5].campsites.totalSites;
-     camp6SitesEmail.textContent = data.data[5].contacts.emailAddresses[0].emailAddress;
-     camp6SitesDes.textContent = data.data[5].description;
+     camp6SitesNum.textContent ='Number of campsites avaliable: ' + data.data[5].campsites.totalSites;
+     camp6SitesEmail.textContent = 'Contact Email: ' +data.data[5].contacts.emailAddresses[0].emailAddress;
+     camp6SitesDes.textContent = 'Description: ' +data.data[5].description;
      camp6SitesImg.innerHTML = data.data[5].images[0].url;
 
      camp6.appendChild(camp6SitesNum);
@@ -149,9 +151,9 @@ async function campgrounds(){
     var camp7SitesDes = document.createElement('p');
     var camp7SitesImg = document.createElement('img');
 
-    camp7SitesNum.textContent = data.data[6].campsites.totalSites;
+    camp7SitesNum.textContent ='Number of campsites avaliable: ' + data.data[6].campsites.totalSites;
     camp7SitesEmail.textContent = "No Email Avaliable";
-    camp7SitesDes.textContent = data.data[6].description;
+    camp7SitesDes.textContent ='Description: ' + data.data[6].description;
     camp7SitesImg.innerHTML = data.data[6].images[0].url;
 
     camp7.appendChild(camp7SitesNum);
@@ -161,16 +163,16 @@ async function campgrounds(){
     }
 
    var camp8 = document.getElementById('camp8');
-   if(element.id === 'camp5'){
+   if(element.id === 'camp8'){
     console.log('true');
     var camp8SitesNum = document.createElement('p');
     var camp8SitesEmail = document.createElement('p');
     var camp8SitesDes = document.createElement('p');
     var camp8SitesImg = document.createElement('img');
 
-    camp8SitesNum.textContent = data.data[7].campsites.totalSites;
-    camp8SitesEmail.textContent = data.data[7].contacts.emailAddresses[0].emailAddress;
-    camp8SitesDes.textContent = data.data[7].description;
+    camp8SitesNum.textContent = 'Number of campsites avaliable: ' +data.data[7].campsites.totalSites;
+    camp8SitesEmail.textContent ='Contact Email: ' + data.data[7].contacts.emailAddresses[0].emailAddress;
+    camp8SitesDes.textContent ='Description: ' + data.data[7].description;
     camp8SitesImg.innerHTML = data.data[7].images[0].url;
 
     camp8.appendChild(camp8SitesNum);
@@ -187,9 +189,9 @@ async function campgrounds(){
     var camp9SitesDes = document.createElement('p');
     var camp9SitesImg = document.createElement('img');
 
-    camp9SitesNum.textContent = data.data[8].campsites.totalSites;
+    camp9SitesNum.textContent ='Number of campsites avaliable: '+  + data.data[8].campsites.totalSites;
     camp9SitesEmail.textContent = "No Email Avaliable";
-    camp9SitesDes.textContent = data.data[8].description;
+    camp9SitesDes.textContent ='Description: ' + data.data[8].description;
     camp9SitesImg.innerHTML = data.data[8].images[0].url;
 
     camp9.appendChild(camp9SitesNum);
@@ -206,9 +208,9 @@ async function campgrounds(){
     var camp10SitesDes = document.createElement('p');
     var camp10SitesImg = document.createElement('img');
 
-    camp10SitesNum.textContent = data.data[9].campsites.totalSites;
-    camp10SitesEmail.textContent = data.data[9].contacts.emailAddresses[0].emailAddress;
-    camp10SitesDes.textContent = data.data[9].description;
+    camp10SitesNum.textContent ='Number of campsites avaliable: ' + data.data[9].campsites.totalSites;
+    camp10SitesEmail.textContent ='Contact Email: ' + data.data[9].contacts.emailAddresses[0].emailAddress;
+    camp10SitesDes.textContent ='Description: ' + data.data[9].description;
     camp10SitesImg.innerHTML = data.data[9].images[0].url;
 
     camp10.appendChild(camp10SitesNum);
