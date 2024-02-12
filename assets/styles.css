@@ -37,8 +37,18 @@ width: 100%
 }
 .camp {
 padding-top:15px;
-font-family: var(--text)
+font-family: var(--text);
+display: flex;
+align-items:flex-start;
+flex-direction: column;
 } 
+.camp p{
+    margin:10px 0 10px 0;
+    text-align: start;
+    width:700px;
+    font-family: var(--text);
+
+}
 
 .weather{
     display: flex;
