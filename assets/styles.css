@@ -57,7 +57,20 @@ flex-direction: column;
     margin: 50px 0 50px 0;
 
 }
-
+.forecast{
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+.day{ 
+    background-color: grey;
+    margin-left:15px ;
+    width: 275px;
+    height: 270px;
+    border-radius: 5px;
+    box-shadow: 10px 5px 5px black;
+    
+}
 /*modal styles below*/
 
  /* The Modal (background) */
