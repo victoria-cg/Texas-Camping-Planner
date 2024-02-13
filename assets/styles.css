@@ -128,3 +128,18 @@ flex-direction: column;
     cursor: pointer;
   }
 
+  /* changed button color CO */
+  #searchBtn {
+    background-color: #363636;
+    color: #fff;
+}
+
+/* made Choose Your About and Weather Conditions bigger CO */
+.h2 {
+    font-size: 150%;
+    font-weight: 500;
+}
+/* added margin to campground search bar CO*/
+#camp-search {
+    margin: 1%;
+}
