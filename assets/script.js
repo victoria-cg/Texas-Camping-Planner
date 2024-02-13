@@ -220,39 +220,73 @@ var Chimney = ['35.691','-101.6422'];
 var Chisos = ['29.275','-103.022'];
 
  //this is a function that turns the json data into data we can use
+ let apiKey = '826bbb162ffd06dab609a97389a04db7';
+ let Lat = NorthCampground[0];
+ let Long = NorthCampground[1];
+ let queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + Lat + "&lon="+ Long +"&appid=" + apiKey +"&units=Imperial";
+
  async function LatLongWeather(){ 
 
-  let apiKey = '826bbb162ffd06dab609a97389a04db7';
-  var Lat = NorthCampground[0];
-  var Long = NorthCampground[1];
- 
-  let queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + Lat + "&lon="+ Long +"&appid=" + apiKey +"&units=Imperial";  
+  
  const response = await fetch(queryURL);
  var data = await response.json();
  console.log(data);
 
 
-}
+ var nameDisplay = document.querySelector('#day1');
+ var tempDisplay = document.querySelector('#temp1');
+ var windDisplay = document.querySelector('#wind1');
+ var descriptionDisplay = document.querySelector('#description1');
+ 
+ var nameDisplay2 = document.querySelector('#day2');
+ var tempDisplay2 = document.querySelector('#temp2');
+ var windDisplay2 = document.querySelector('#wind2');
+ var descriptionDisplay2 = document.querySelector('#description2');
+ 
+ 
+ tempDisplay.innerHTML = data.list[0].main.feels_like;
+ windDisplay.innerHTML = data.list[0].wind.speed;
+ descriptionDisplay.innerHTML = data.list[0].weather[0].description;
+ 
+ nameDisplay2.innerHTML = '277 North Campground'
+ tempDisplay2.innerHTML = data.list[1].main.feels_like;
+ windDisplay2.innerHTML = data.list[1].wind.speed;
+ descriptionDisplay2.innerHTML = data.list[1].weather[0].description;
 
-var searchCamp = document.querySelector('.camp-search')
+ }
+
+var searchCamp = document.querySelector('#camp-search')
 var searchBtn = document.querySelector('#searchBtn')
 var forecastDisplay = document.querySelector('.forecast');
 
-LatLongWeather()
-
 
 searchBtn.addEventListener('click', ()=>{
+  forecastDisplay.style.display = 'flex';
   var campGround = searchCamp.value.trim();
-  if(campGround !== ''){
- LatLongWeather(campGround)
- forecastDisplay.style.display = 'flex';
-  window.localStorage.setItem('Camp',campGround )
-  }else{
-    console.error('City Name cannot be empty')
+
+  if(campGround === 'North Campground'){
+    Lat = NorthCampground[0];
+    Long = NorthCampground[1];
+    
   }
-  
+  else if(campGround === 'Bird Island Basin Campground'){
+    Lat = BirdIsland[0];
+    Long = BirdIsland[1];
+    
+  }
+  else if(campGround === "Blue Creek"){
+  Lat = BlueCreek[0];
+  Long = BlueCreek[1];
+ 
+}
+
+  window.localStorage.setItem('Camp',campGround )
+
   })
 
+
+
+LatLongWeather()
 
 
 //functions and variables to open and close the modal
