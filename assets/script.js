@@ -220,13 +220,9 @@ var Chimney = ['35.691','-101.6422'];
 var Chisos = ['29.275','-103.022'];
 
  //this is a function that turns the json data into data we can use
- let apiKey = '826bbb162ffd06dab609a97389a04db7';
- let Lat = NorthCampground[0];
- let Long = NorthCampground[1];
- let queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + Lat + "&lon="+ Long +"&appid=" + apiKey +"&units=Imperial";
-
- async function LatLongWeather(){ 
-
+ async function LatLongWeather(Lat, Long){ 
+  let apiKey = '826bbb162ffd06dab609a97389a04db7';
+  let queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + Lat + "&lon="+ Long +"&appid=" + apiKey +"&units=Imperial";
   
  const response = await fetch(queryURL);
  var data = await response.json();
@@ -242,6 +238,21 @@ var Chisos = ['29.275','-103.022'];
  var tempDisplay2 = document.querySelector('#temp2');
  var windDisplay2 = document.querySelector('#wind2');
  var descriptionDisplay2 = document.querySelector('#description2');
+
+ var nameDisplay3 = document.querySelector('#day3');
+ var tempDisplay3 = document.querySelector('#temp3');
+ var windDisplay3 = document.querySelector('#wind3');
+ var descriptionDisplay3 = document.querySelector('#description3');
+
+ var nameDisplay4 = document.querySelector('#day4');
+ var tempDisplay4 = document.querySelector('#temp4');
+ var windDisplay4 = document.querySelector('#wind4');
+ var descriptionDisplay4 = document.querySelector('#description4');
+
+ var nameDisplay5 = document.querySelector('#day5');
+ var tempDisplay5 = document.querySelector('#temp5');
+ var windDisplay5 = document.querySelector('#wind5');
+ var descriptionDisplay5 = document.querySelector('#description5');
  
  
  tempDisplay.innerHTML = data.list[0].main.feels_like;
@@ -252,6 +263,21 @@ var Chisos = ['29.275','-103.022'];
  tempDisplay2.innerHTML = data.list[1].main.feels_like;
  windDisplay2.innerHTML = data.list[1].wind.speed;
  descriptionDisplay2.innerHTML = data.list[1].weather[0].description;
+
+ nameDisplay3.innerHTML = '277 North Campground'
+ tempDisplay3.innerHTML = data.list[2].main.feels_like;
+ windDisplay3.innerHTML = data.list[2].wind.speed;
+ descriptionDisplay3.innerHTML = data.list[2].weather[0].description;
+
+ nameDisplay4.innerHTML = '277 North Campground'
+ tempDisplay4.innerHTML = data.list[3].main.feels_like;
+ windDisplay4.innerHTML = data.list[3].wind.speed;
+ descriptionDisplay4.innerHTML = data.list[3].weather[0].description;
+
+ nameDisplay5.innerHTML = '277 North Campground'
+ tempDisplay5.innerHTML = data.list[4].main.feels_like;
+ windDisplay5.innerHTML = data.list[4].wind.speed;
+ descriptionDisplay5.innerHTML = data.list[1].weather[0].description;
 
  }
 
@@ -267,19 +293,53 @@ searchBtn.addEventListener('click', ()=>{
   if(campGround === 'North Campground'){
     Lat = NorthCampground[0];
     Long = NorthCampground[1];
-    
+    LatLongWeather(Lat,Long);
   }
   else if(campGround === 'Bird Island Basin Campground'){
     Lat = BirdIsland[0];
     Long = BirdIsland[1];
-    
+    LatLongWeather(Lat,Long);
   }
   else if(campGround === "Blue Creek"){
   Lat = BlueCreek[0];
   Long = BlueCreek[1];
- 
+  LatLongWeather(Lat,Long);
 }
-
+else if(campGround === "Blue Ridge Wilderness"){
+Lat = BlueRidge[0];
+Long = BlueRidge[1];
+LatLongWeather(Lat,Long);
+}
+else if(campGround === "Blue West"){
+  Lat = Bluewest[0];
+  Long = Bluewest[1];
+  LatLongWeather(Lat,Long);
+  }
+  else if(campGround === "Bugbee Canyon"){
+    Lat = Bugbee[0];
+    Long = Bugbee[1];
+    LatLongWeather(Lat,Long);
+    }
+    else if(campGround === "Bush Mountain Wilderness"){
+      Lat = Bush[0];
+      Long = Bush[1];
+      LatLongWeather(Lat,Long);
+      }
+    else if(campGround === "Cedar Canyon"){
+        Lat = Cedar[0];
+        Long = Cedar[1];
+        LatLongWeather(Lat,Long);
+        }
+        else if(campGround === "Chimney Hollow"){
+          Lat = Chimney[0];
+          Long = Chimney[1];
+          LatLongWeather(Lat,Long);
+          }
+          else if(campGround === "Chisos Basin"){
+            Lat = Chisos[0];
+            Long = Chisos[1];
+            LatLongWeather(Lat,Long);
+            }
   window.localStorage.setItem('Camp',campGround )
 
   })
@@ -287,7 +347,6 @@ searchBtn.addEventListener('click', ()=>{
 
 
 LatLongWeather()
-
 
 //functions and variables to open and close the modal
 // Get the modal
