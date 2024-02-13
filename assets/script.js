@@ -1,18 +1,3 @@
-
-// //These are variables so we can change the city the user looks for later in the project
-let apiKey = '826bbb162ffd06dab609a97389a04db7';
-let city = 'Houston';
-
-let queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=Imperial";
-
-//this is a function that turns the json data into data we can use
-async function userCity(){    
-  const response = await fetch(queryURL);
-  var data = await response.json();
-  console.log(data);
-}
-userCity()
-
 var campurl = "https://developer.nps.gov/api/v1/campgrounds?stateCode=TX&limit=10&api_key=u5CiPtHmqSiAgcizRWaAZxplrNDN9wXMsKSPUC47"
 
 async function campgrounds(){    
@@ -23,17 +8,19 @@ async function campgrounds(){
   //this is a function calling to every li with class of camp
   document.querySelectorAll('.camp').forEach(element =>{
     element.addEventListener('click', event =>{
+      event.preventDefault();
       var camp1 = document.getElementById('camp1');
      if(element.id === 'camp1'){
+      event.preventDefault();
       console.log('true');
       var camp1SitesNum = document.createElement('p');
       var camp1SitesEmail = document.createElement('p');
       var camp1SitesDes = document.createElement('p');
       var camp1SitesImg = document.createElement('img');
 
-      camp1SitesNum.textContent = data.data[0].campsites.totalSites;
-      camp1SitesEmail.textContent = data.data[0].contacts.emailAddresses[0].emailAddress;
-      camp1SitesDes.textContent = data.data[0].description;
+      camp1SitesNum.textContent = 'Number of campsites avaliable: ' +data.data[0].campsites.totalSites;
+      camp1SitesEmail.textContent = 'Contact Email: ' + data.data[0].contacts.emailAddresses[0].emailAddress;
+      camp1SitesDes.textContent = 'Description: ' + data.data[0].description;
       camp1SitesImg.innerHTML = data.data[0].images[1].url;
 
       camp1.appendChild(camp1SitesNum);
@@ -51,9 +38,9 @@ async function campgrounds(){
      var camp2SitesDes = document.createElement('p');
      var camp2SitesImg = document.createElement('img');
 
-     camp2SitesNum.textContent = data.data[1].campsites.totalSites;
-     camp2SitesEmail.textContent = data.data[1].contacts.emailAddresses[0].emailAddress;
-     camp2SitesDes.textContent = data.data[1].description;
+     camp2SitesNum.textContent = 'Number of campsites avaliable: ' +data.data[1].campsites.totalSites;
+     camp2SitesEmail.textContent ='Contact Email: ' + data.data[1].contacts.emailAddresses[0].emailAddress;
+     camp2SitesDes.textContent = 'Description: ' +data.data[1].description;
      camp2SitesImg.innerHTML = data.data[1].images[1].url;
 
      camp2.appendChild(camp2SitesNum);
@@ -70,9 +57,9 @@ async function campgrounds(){
      var camp3SitesDes = document.createElement('p');
      var camp3SitesImg = document.createElement('img');
 
-     camp3SitesNum.textContent = data.data[2].campsites.totalSites;
-     camp3SitesEmail.textContent = data.data[2].contacts.emailAddresses[0].emailAddress;
-     camp3SitesDes.textContent = data.data[2].description;
+     camp3SitesNum.textContent = 'Number of campsites avaliable: ' +data.data[2].campsites.totalSites;
+     camp3SitesEmail.textContent = 'Contact Email: ' +data.data[2].contacts.emailAddresses[0].emailAddress;
+     camp3SitesDes.textContent ='Description: ' + data.data[2].description;
      camp3SitesImg.innerHTML = data.data[2].images[0].url;
 
      camp3.appendChild(camp3SitesNum);
@@ -89,9 +76,9 @@ async function campgrounds(){
      var camp4SitesDes = document.createElement('p');
      var camp4SitesImg = document.createElement('img');
 
-     camp4SitesNum.textContent = data.data[3].campsites.totalSites;
+     camp4SitesNum.textContent = 'Number of campsites avaliable: ' +data.data[3].campsites.totalSites;
      camp4SitesEmail.textContent = "No Email Avaliable";
-     camp4SitesDes.textContent = data.data[3].description;
+     camp4SitesDes.textContent = 'Description: ' +data.data[3].description;
      camp4SitesImg.innerHTML = data.data[3].images[0].url;
 
      camp4.appendChild(camp4SitesNum);
@@ -109,9 +96,9 @@ async function campgrounds(){
      var camp5SitesDes = document.createElement('p');
      var camp5SitesImg = document.createElement('img');
 
-     camp5SitesNum.textContent = data.data[4].campsites.totalSites;
-     camp5SitesEmail.textContent = data.data[4].contacts.emailAddresses[0].emailAddress;
-     camp5SitesDes.textContent = data.data[4].description;
+     camp5SitesNum.textContent = 'Number of campsites avaliable: ' +data.data[4].campsites.totalSites;
+     camp5SitesEmail.textContent = 'Contact Email: ' +data.data[4].contacts.emailAddresses[0].emailAddress;
+     camp5SitesDes.textContent ='Description: ' + data.data[4].description;
      camp5SitesImg.innerHTML = data.data[4].images[0].url;
 
      camp5.appendChild(camp5SitesNum);
@@ -128,9 +115,9 @@ async function campgrounds(){
      var camp6SitesDes = document.createElement('p');
      var camp6SitesImg = document.createElement('img');
 
-     camp6SitesNum.textContent = data.data[5].campsites.totalSites;
-     camp6SitesEmail.textContent = data.data[5].contacts.emailAddresses[0].emailAddress;
-     camp6SitesDes.textContent = data.data[5].description;
+     camp6SitesNum.textContent ='Number of campsites avaliable: ' + data.data[5].campsites.totalSites;
+     camp6SitesEmail.textContent = 'Contact Email: ' +data.data[5].contacts.emailAddresses[0].emailAddress;
+     camp6SitesDes.textContent = 'Description: ' +data.data[5].description;
      camp6SitesImg.innerHTML = data.data[5].images[0].url;
 
      camp6.appendChild(camp6SitesNum);
@@ -148,9 +135,9 @@ async function campgrounds(){
     var camp7SitesDes = document.createElement('p');
     var camp7SitesImg = document.createElement('img');
 
-    camp7SitesNum.textContent = data.data[6].campsites.totalSites;
+    camp7SitesNum.textContent ='Number of campsites avaliable: ' + data.data[6].campsites.totalSites;
     camp7SitesEmail.textContent = "No Email Avaliable";
-    camp7SitesDes.textContent = data.data[6].description;
+    camp7SitesDes.textContent ='Description: ' + data.data[6].description;
     camp7SitesImg.innerHTML = data.data[6].images[0].url;
 
     camp7.appendChild(camp7SitesNum);
@@ -160,16 +147,16 @@ async function campgrounds(){
     }
 
    var camp8 = document.getElementById('camp8');
-   if(element.id === 'camp5'){
+   if(element.id === 'camp8'){
     console.log('true');
     var camp8SitesNum = document.createElement('p');
     var camp8SitesEmail = document.createElement('p');
     var camp8SitesDes = document.createElement('p');
     var camp8SitesImg = document.createElement('img');
 
-    camp8SitesNum.textContent = data.data[7].campsites.totalSites;
-    camp8SitesEmail.textContent = data.data[7].contacts.emailAddresses[0].emailAddress;
-    camp8SitesDes.textContent = data.data[7].description;
+    camp8SitesNum.textContent = 'Number of campsites avaliable: ' +data.data[7].campsites.totalSites;
+    camp8SitesEmail.textContent ='Contact Email: ' + data.data[7].contacts.emailAddresses[0].emailAddress;
+    camp8SitesDes.textContent ='Description: ' + data.data[7].description;
     camp8SitesImg.innerHTML = data.data[7].images[0].url;
 
     camp8.appendChild(camp8SitesNum);
@@ -186,9 +173,9 @@ async function campgrounds(){
     var camp9SitesDes = document.createElement('p');
     var camp9SitesImg = document.createElement('img');
 
-    camp9SitesNum.textContent = data.data[8].campsites.totalSites;
+    camp9SitesNum.textContent ='Number of campsites avaliable: '+  + data.data[8].campsites.totalSites;
     camp9SitesEmail.textContent = "No Email Avaliable";
-    camp9SitesDes.textContent = data.data[8].description;
+    camp9SitesDes.textContent ='Description: ' + data.data[8].description;
     camp9SitesImg.innerHTML = data.data[8].images[0].url;
 
     camp9.appendChild(camp9SitesNum);
@@ -205,9 +192,9 @@ async function campgrounds(){
     var camp10SitesDes = document.createElement('p');
     var camp10SitesImg = document.createElement('img');
 
-    camp10SitesNum.textContent = data.data[9].campsites.totalSites;
-    camp10SitesEmail.textContent = data.data[9].contacts.emailAddresses[0].emailAddress;
-    camp10SitesDes.textContent = data.data[9].description;
+    camp10SitesNum.textContent ='Number of campsites avaliable: ' + data.data[9].campsites.totalSites;
+    camp10SitesEmail.textContent ='Contact Email: ' + data.data[9].contacts.emailAddresses[0].emailAddress;
+    camp10SitesDes.textContent ='Description: ' + data.data[9].description;
     camp10SitesImg.innerHTML = data.data[9].images[0].url;
 
     camp10.appendChild(camp10SitesNum);
@@ -220,4 +207,170 @@ async function campgrounds(){
 }
 
 campgrounds()
+//these are arrays with each campsites lat[0] and long[1] so we can call to then when the user searches
+var NorthCampground = ['29.512',"-100.98" ];
+var BirdIsland = ['27.512','-97.313'];
+var BlueCreek = ['35.723','-101.663'];
+var BlueRidge = ['31.948','-104.871'];
+var Bluewest = ['35.682','-101.628'];
+var Bugbee = ['35.724','-101.5901'];
+var Bush = ['31.926','-104.8766'];
+var Cedar = ['35.795','-101.244'];
+var Chimney = ['35.691','-101.6422'];
+var Chisos = ['29.275','-103.022'];
 
+ //this is a function that turns the json data into data we can use
+ async function LatLongWeather(Lat, Long){ 
+  let apiKey = '826bbb162ffd06dab609a97389a04db7';
+  let queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + Lat + "&lon="+ Long +"&appid=" + apiKey +"&units=Imperial";
+  
+ const response = await fetch(queryURL);
+ var data = await response.json();
+ console.log(data);
+
+
+ var nameDisplay = document.querySelector('#day1');
+ var tempDisplay = document.querySelector('#temp1');
+ var windDisplay = document.querySelector('#wind1');
+ var descriptionDisplay = document.querySelector('#description1');
+ 
+ var nameDisplay2 = document.querySelector('#day2');
+ var tempDisplay2 = document.querySelector('#temp2');
+ var windDisplay2 = document.querySelector('#wind2');
+ var descriptionDisplay2 = document.querySelector('#description2');
+
+ var nameDisplay3 = document.querySelector('#day3');
+ var tempDisplay3 = document.querySelector('#temp3');
+ var windDisplay3 = document.querySelector('#wind3');
+ var descriptionDisplay3 = document.querySelector('#description3');
+
+ var nameDisplay4 = document.querySelector('#day4');
+ var tempDisplay4 = document.querySelector('#temp4');
+ var windDisplay4 = document.querySelector('#wind4');
+ var descriptionDisplay4 = document.querySelector('#description4');
+
+ var nameDisplay5 = document.querySelector('#day5');
+ var tempDisplay5 = document.querySelector('#temp5');
+ var windDisplay5 = document.querySelector('#wind5');
+ var descriptionDisplay5 = document.querySelector('#description5');
+ 
+ 
+ tempDisplay.innerHTML = data.list[0].main.feels_like;
+ windDisplay.innerHTML = data.list[0].wind.speed;
+ descriptionDisplay.innerHTML = data.list[0].weather[0].description;
+ 
+ nameDisplay2.innerHTML = '277 North Campground'
+ tempDisplay2.innerHTML = data.list[1].main.feels_like;
+ windDisplay2.innerHTML = data.list[1].wind.speed;
+ descriptionDisplay2.innerHTML = data.list[1].weather[0].description;
+
+ nameDisplay3.innerHTML = '277 North Campground'
+ tempDisplay3.innerHTML = data.list[2].main.feels_like;
+ windDisplay3.innerHTML = data.list[2].wind.speed;
+ descriptionDisplay3.innerHTML = data.list[2].weather[0].description;
+
+ nameDisplay4.innerHTML = '277 North Campground'
+ tempDisplay4.innerHTML = data.list[3].main.feels_like;
+ windDisplay4.innerHTML = data.list[3].wind.speed;
+ descriptionDisplay4.innerHTML = data.list[3].weather[0].description;
+
+ nameDisplay5.innerHTML = '277 North Campground'
+ tempDisplay5.innerHTML = data.list[4].main.feels_like;
+ windDisplay5.innerHTML = data.list[4].wind.speed;
+ descriptionDisplay5.innerHTML = data.list[1].weather[0].description;
+
+ }
+
+var searchCamp = document.querySelector('#camp-search')
+var searchBtn = document.querySelector('#searchBtn')
+var forecastDisplay = document.querySelector('.forecast');
+
+
+searchBtn.addEventListener('click', ()=>{
+  forecastDisplay.style.display = 'flex';
+  var campGround = searchCamp.value.trim();
+
+  if(campGround === 'North Campground'){
+    Lat = NorthCampground[0];
+    Long = NorthCampground[1];
+    LatLongWeather(Lat,Long);
+  }
+  else if(campGround === 'Bird Island Basin Campground'){
+    Lat = BirdIsland[0];
+    Long = BirdIsland[1];
+    LatLongWeather(Lat,Long);
+  }
+  else if(campGround === "Blue Creek"){
+  Lat = BlueCreek[0];
+  Long = BlueCreek[1];
+  LatLongWeather(Lat,Long);
+}
+else if(campGround === "Blue Ridge Wilderness"){
+Lat = BlueRidge[0];
+Long = BlueRidge[1];
+LatLongWeather(Lat,Long);
+}
+else if(campGround === "Blue West"){
+  Lat = Bluewest[0];
+  Long = Bluewest[1];
+  LatLongWeather(Lat,Long);
+  }
+  else if(campGround === "Bugbee Canyon"){
+    Lat = Bugbee[0];
+    Long = Bugbee[1];
+    LatLongWeather(Lat,Long);
+    }
+    else if(campGround === "Bush Mountain Wilderness"){
+      Lat = Bush[0];
+      Long = Bush[1];
+      LatLongWeather(Lat,Long);
+      }
+    else if(campGround === "Cedar Canyon"){
+        Lat = Cedar[0];
+        Long = Cedar[1];
+        LatLongWeather(Lat,Long);
+        }
+        else if(campGround === "Chimney Hollow"){
+          Lat = Chimney[0];
+          Long = Chimney[1];
+          LatLongWeather(Lat,Long);
+          }
+          else if(campGround === "Chisos Basin"){
+            Lat = Chisos[0];
+            Long = Chisos[1];
+            LatLongWeather(Lat,Long);
+            }
+  window.localStorage.setItem('Camp',campGround )
+
+  })
+
+
+
+LatLongWeather()
+
+//functions and variables to open and close the modal
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}

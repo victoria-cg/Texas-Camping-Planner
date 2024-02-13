@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" class="has-background-grey-light"></html>
+<html lang="en" class="has-background-grey-ligher"></html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Camping Planner</title>
-    <!-- made href changes to be able to manipulate the hero image  -->
+    <!-- made href changes to be able to manipulate the hero image  --
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
-    <!-- <title>Texas Camping Planner</title> -->
+    <title>Texas Camping Planner</title> 
+   
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-      href="./assets/styles.css"
-    />
+      />
     <link
     rel="stylesheet"
     href="./assets/styles.css"
@@ -52,14 +51,29 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item"> Campgrounds </a>
+          <!--nav items link to respective sections of the website-->
+          <a class="navbar-item" href="#campgrounds-section"> Campgrounds </a>
 
-          <a class="navbar-item"> Live Weather </a>
+          <a class="navbar-item" href="#weather-container"> Live Weather </a>
 
-          <button class="js-modal-trigger" data-target="modal-js-example">
+          <a class="navbar-item" href="#about">About</a>
+
+          <!-- <button class="js-modal-trigger" data-target="modal-js-example">
             Open JS example modal
-          </button>
+          </button> -->
+      <!-- Button to trigger/open the modal -->
+    <button id="myBtn">Going camping in other states? Click Here!</button>
 
+      <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Looking for parks outside of Texas? Check out the National Parks Service website <a href=https://www.nps.gov/findapark/index.htm>here</a>!</p>
+    </div>
+
+</div>
          </div>
     </nav>
     <!-- added a class for hero-photo to be able to style with css accordingly CO -->
@@ -71,21 +85,22 @@
     
     <section class="section">
       <div class="container">
-        <h1 class="title">Top 10 Texas State Campgrounds</h1>
-        <p class="subtitle">Find a campground and check weather conditions</p>
-     <div class="About">
-     <h1>About</h1>
-     <p>At Texas Camping Planner we have curated ten wonderful campgrounds in Texas that are available through the National Parks Service. You can click on the name of a campground below to see key park information including the number of campsites, fees to access the campground, and a description of that campground. Search for a campground by name in the 'weather conditions' section to see the weather forecast for that campground and plan your camping trip.</p>
-
+        <h1 class="title">Texas Camping Planner</h1>
+        <p> <h2 class="subtitle"> Find a campground and check weather conditions</h2></p>
+     <div class="About" id="about">
+     <h2> About </h2>
+     <p>
+      At Texas Camping Planner we have curated ten wonderful campgrounds in Texas that are available through the National Parks Service. You can click on the name of a campground below to see key park information including the number of campsites, fees to access the campground, and a description of that campground. Search for a campground by name in the 'weather conditions' section to see the weather forecast for that campground and plan your camping trip.
+    </p>
      </div>
 
      </div>
-      <!-- Campsite info will be displayed here VG  -->
-    <div class="choose-location">
+      <!-- Campsite info displayed here VG  -->
+    <div class="choose-location" id="campgrounds-section">
       <h2>Choose Your Location</h2>
       <div class="campground-details">
         <ul>
-          <div id="camp1" class="camp">277 North Campground</div>
+          <li id="camp1" class="camp">North Campground</li>
           <li id="camp2" class="camp">Bird Island Basin Campground</li>
           <li id="camp3" class="camp">Blue Creek</li>
           <li id="camp4" class="camp">Blue Ridge Wilderness</li>
@@ -98,16 +113,45 @@
         </ul>
       </div>
     </div>
-    <!-- Weather conditions details will be displayed here CO -->
-    <div class="weather">
+    <!-- Weather conditions details displayed here CO -->
+    <div class="weather" id="weather-container">
       <h2>Weather Conditions</h2>
-      <input type="text" placeholder="Campground">
-      <button>Submit</button>
-      <div class="weather-details">
-      </div>
+      <input type="text" placeholder="Campground" id="camp-search">
+      <button type="sumbit" id="searchBtn">Submit</button>
+</div>
+<div class="forecast">
+      <div class="day" >
+        <h1 id="day1">placeholder</h1>
+        <p id="temp1">temp</p>
+        <p id="wind1">wind</p>
+        <p id="description1">humidity</p>
     </div>
-
-
+    <div class="day" >
+        <h1 id="day2">placeholder</h1>
+        <p id="temp2">temp</p>
+        <p id="wind2">wind</p>
+        <p id="description2">humidity</p>
+    </div>
+    <div class="day" >
+        <h1 id="day3">placeholder</h1>
+        <p id="temp3">temp</p>
+        <p id="wind3">wind</p>
+        <p id="description3">humidity</p>
+    </div>
+    <div class="day">
+        <h1 id="day4">placeholder</h1>
+        <p id="temp4">temp</p>
+        <p id="wind4">wind</p>
+        <p id="description4">humidity</p>
+    </div>
+    <div class="day">
+        <h1 id="day5">placeholder</h1>
+        <p id="temp5">temp</p>
+        <p id="wind5">wind</p>
+        <p id="description5">humidity</p>
+    </div>
+    
+  </div> 
   
   </body>
   <script src="./assets/script.js"></script>
