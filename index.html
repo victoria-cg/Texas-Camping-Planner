@@ -3,17 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Camping Planner</title>
     <!-- made href changes to be able to manipulate the hero image  -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <title>Texas Camping Planner</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-      href="./assets/styles.css"
-    />
+      />
     <link
     rel="stylesheet"
     href="./assets/styles.css"
@@ -52,9 +47,12 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item"> Campgrounds </a>
+          <!--nav items link to respective sections of the website-->
+          <a class="navbar-item" href="#campgrounds-section"> Campgrounds </a>
 
-          <a class="navbar-item"> Live Weather </a>
+          <a class="navbar-item" href="#weather-container"> Live Weather </a>
+
+          <a class="navbar-item" href="#about">About</a>
 
           <!-- <button class="js-modal-trigger" data-target="modal-js-example">
             Open JS example modal
@@ -83,9 +81,9 @@
     
     <section class="section">
       <div class="container">
-        <h1 class="title">Top 10 Texas State Campgrounds</h1>
+        <h1 class="title">Texas Camping Planner</h1>
         <p class="subtitle">Find a campground and check weather conditions</p>
-     <div class="About">
+     <div class="About" id="about">
      <h1>About</h1>
      <p>At Texas Camping Planner we have curated ten wonderful campgrounds in Texas that are available through the National Parks Service. You can click on the name of a campground below to see key park information including the number of campsites, fees to access the campground, and a description of that campground. Search for a campground by name in the 'weather conditions' section to see the weather forecast for that campground and plan your camping trip.</p>
 
@@ -93,7 +91,7 @@
 
      </div>
       <!-- Campsite info will be displayed here VG  -->
-    <div class="choose-location">
+    <div class="choose-location" id="campgrounds-section">
       <h2>Choose Your Location</h2>
       <div class="campground-details">
         <ul>
@@ -111,7 +109,7 @@
       </div>
     </div>
     <!-- Weather conditions details will be displayed here CO -->
-    <div class="weather">
+    <div class="weather" id="weather-container">
       <h2>Weather Conditions</h2>
       <input type="text" placeholder="Campground" id="camp-search">
       <button type="sumbit" id="searchBtn">Submit</button>
