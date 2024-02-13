@@ -1,19 +1,3 @@
-
-//These are variables so we can change the city the user looks for later in the project
- let apiKey = '826bbb162ffd06dab609a97389a04db7';
- var Lat = '29.512';
- var Long = "-100.98";
-
- let queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + Lat + "&lon="+ Long +"&appid=" + apiKey +"&units=Imperial";
-
- //this is a function that turns the json data into data we can use
-  async function LatLongWeather(Lat, Long){    
-   const response = await fetch(queryURL);
-   var data = await response.json();
-   console.log(data);
- }
-LatLongWeather()
-
 var campurl = "https://developer.nps.gov/api/v1/campgrounds?stateCode=TX&limit=10&api_key=u5CiPtHmqSiAgcizRWaAZxplrNDN9wXMsKSPUC47"
 
 async function campgrounds(){    
@@ -223,6 +207,53 @@ async function campgrounds(){
 }
 
 campgrounds()
+//these are arrays with each campsites lat[0] and long[1] so we can call to then when the user searches
+var NorthCampground = ['29.512',"-100.98" ];
+var BirdIsland = ['27.512','-97.313'];
+var BlueCreek = ['35.723','-101.663'];
+var BlueRidge = ['31.948','-104.871'];
+var Bluewest = ['35.682','-101.628'];
+var Bugbee = ['35.724','-101.5901'];
+var Bush = ['31.926','-104.8766'];
+var Cedar = ['35.795','-101.244'];
+var Chimney = ['35.691','-101.6422'];
+var Chisos = ['29.275','-103.022'];
+
+ //this is a function that turns the json data into data we can use
+ async function LatLongWeather(){ 
+
+  let apiKey = '826bbb162ffd06dab609a97389a04db7';
+  var Lat = NorthCampground[0];
+  var Long = NorthCampground[1];
+ 
+  let queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + Lat + "&lon="+ Long +"&appid=" + apiKey +"&units=Imperial";  
+ const response = await fetch(queryURL);
+ var data = await response.json();
+ console.log(data);
+
+
+}
+
+var searchCamp = document.querySelector('.camp-search')
+var searchBtn = document.querySelector('#searchBtn')
+var forecastDisplay = document.querySelector('.forecast');
+
+LatLongWeather()
+
+
+searchBtn.addEventListener('click', ()=>{
+  var campGround = searchCamp.value.trim();
+  if(campGround !== ''){
+ LatLongWeather(campGround)
+ forecastDisplay.style.display = 'flex';
+  window.localStorage.setItem('Camp',campGround )
+  }else{
+    console.error('City Name cannot be empty')
+  }
+  
+  })
+
+
 
 //functions and variables to open and close the modal
 // Get the modal
