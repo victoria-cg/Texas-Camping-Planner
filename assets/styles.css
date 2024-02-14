@@ -58,9 +58,9 @@ flex-direction: column;
 
 }
 .forecast{
-    display: flex;
+    display:none;
     justify-content: center;
-    display: none;
+   
 }
 .day{ 
     background-color: grey;
@@ -69,7 +69,6 @@ flex-direction: column;
     height: 270px;
     border-radius: 5px;
     box-shadow: 10px 5px 5px black;
-    
 }
 /*modal styles below*/
 
