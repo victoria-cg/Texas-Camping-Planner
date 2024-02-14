@@ -340,9 +340,24 @@ else if(campGround === "Blue West"){
             Long = Chisos[1];
             LatLongWeather(Lat,Long);
             }
-  window.localStorage.setItem('Camp',campGround )
+  window.localStorage.setItem('Camp', JSON.stringify(campGround))
 
   })
+
+  function loadStorage(){
+    //parses string of camp names into an array of camp names
+    var savedCampgrounds = JSON.parse(localStorage.getItem('Camp'))
+    if (savedCampgrounds===null) {
+      localStorage.setItem('Camp', JSON.stringify([])) //creates array of camp names if there were none in storage to retrieve
+      return
+    }
+    console.log("saved camp logged below")
+    console.log(savedCampgrounds);
+  //iterate through the array and append information to the screen that you want to persist based on the saved camp names
+  for (var i = 0; i < savedCampgrounds.length; i++) {
+  
+  }
+}
 
 
 
