@@ -344,27 +344,29 @@ else if(campGround === "Blue West"){
 
   })
 
-
-
-
-//   function loadStorage(){
-//     //parses string of camp names into an array of camp names
-//     var savedCampgrounds = JSON.parse(localStorage.getItem('Camp'))
-//     if (savedCampgrounds===null) {
-//       localStorage.setItem('Camp', JSON.stringify([])) //creates array of camp names if there were none in storage to retrieve
-//       return
-//     }
-//     console.log("saved camp logged below")
-//     console.log(savedCampgrounds);
-//   //iterate through the array and append information to the screen that you want to persist based on the saved camp names
-//   for (var i = 0; i < savedCampgrounds.length; i++) {
-//   console.log('processing'+ savedCampgrounds[i])
-//   }
-// }
-
-// loadStorage();
-
 LatLongWeather()
+
+//function to render most recently searched campground on the page from storage
+function loadStorage(){
+  //parses string of camp names into an array of camp names
+  var savedCampgrounds = JSON.parse(localStorage.getItem('Camp'));
+  if (savedCampgrounds===null) {
+    localStorage.setItem('Camp', JSON.stringify([])) //creates array of camp names if there were none in storage to retrieve
+    return
+  }
+  console.log("saved camp logged below")
+  console.log(savedCampgrounds);
+//iterate through the array and append information to the screen that you want to persist based on the saved camp names
+var savedCampContainer = document.getElementById("previously-viewed");
+var savedCampListEl =document.createElement("ul");
+savedCampContainer.appendChild(savedCampListEl);
+console.log(savedCampgrounds);
+var campLi = document.createElement ("li");
+campLi.textContent = savedCampgrounds;
+savedCampListEl.appendChild(campLi);
+}
+
+loadStorage();
 
 //functions and variables to open and close the modal
 // Get the modal
