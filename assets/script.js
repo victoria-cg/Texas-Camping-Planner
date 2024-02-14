@@ -202,7 +202,7 @@ async function campgrounds(){
     camp10.appendChild(camp10SitesDes);
     camp10.appendChild(camp10SitesImg);
    }
-  })
+  },{once:true})
 })
 }
 
