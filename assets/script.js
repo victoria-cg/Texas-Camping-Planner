@@ -227,7 +227,7 @@ var Chisos = ['29.275','-103.022'];
  const response = await fetch(queryURL);
  var data = await response.json();
  console.log(data);
-
+ var campGround = searchCamp.value.trim()
 
  var nameDisplay = document.querySelector('#day1');
  var tempDisplay = document.querySelector('#temp1');
@@ -254,29 +254,29 @@ var Chisos = ['29.275','-103.022'];
  var windDisplay5 = document.querySelector('#wind5');
  var descriptionDisplay5 = document.querySelector('#description5');
  
- 
- tempDisplay.innerHTML = data.list[0].main.feels_like;
- windDisplay.innerHTML = data.list[0].wind.speed;
+ nameDisplay.innerHTML = 'Campground: '+ campGround;
+ tempDisplay.innerHTML =  'Temperature: ' +  Math.round(data.list[0].main.feels_like) + " °f" ;
+ windDisplay.innerHTML = 'Wind: ' + Math.round(data.list[0].wind.speed);
  descriptionDisplay.innerHTML = data.list[0].weather[0].description;
  
- nameDisplay2.innerHTML = '277 North Campground'
- tempDisplay2.innerHTML = data.list[1].main.feels_like;
- windDisplay2.innerHTML = data.list[1].wind.speed;
+ nameDisplay2.innerHTML = 'Campground: ' + campGround;
+ tempDisplay2.innerHTML = 'Temperature: ' + Math.round(data.list[1].main.feels_like) + " °f" ;
+ windDisplay2.innerHTML = 'Wind: ' + Math.round(data.list[1].wind.speed) + " mph";
  descriptionDisplay2.innerHTML = data.list[1].weather[0].description;
 
- nameDisplay3.innerHTML = '277 North Campground'
- tempDisplay3.innerHTML = data.list[2].main.feels_like;
- windDisplay3.innerHTML = data.list[2].wind.speed;
+ nameDisplay3.innerHTML = 'Campground: ' + campGround;
+ tempDisplay3.innerHTML = 'Temperature: ' + Math.round(data.list[2].main.feels_like) + " °f" ;
+ windDisplay3.innerHTML = 'Wind: ' +  Math.round(data.list[2].wind.speed) + " mph";
  descriptionDisplay3.innerHTML = data.list[2].weather[0].description;
 
- nameDisplay4.innerHTML = '277 North Campground'
- tempDisplay4.innerHTML = data.list[3].main.feels_like;
- windDisplay4.innerHTML = data.list[3].wind.speed;
+ nameDisplay4.innerHTML = 'Campground: '+ campGround;
+ tempDisplay4.innerHTML = 'Temperature: ' + Math.round(data.list[3].main.feels_like) + " °f" ;
+ windDisplay4.innerHTML = 'Wind: ' + Math.round(data.list[3].wind.speed) + " mph";
  descriptionDisplay4.innerHTML = data.list[3].weather[0].description;
 
- nameDisplay5.innerHTML = '277 North Campground'
- tempDisplay5.innerHTML = data.list[4].main.feels_like;
- windDisplay5.innerHTML = data.list[4].wind.speed;
+ nameDisplay5.innerHTML = 'Campground: '+ campGround;
+ tempDisplay5.innerHTML = 'Temperature: ' + Math.round(data.list[4].main.feels_like) + " °f" ;
+ windDisplay5.innerHTML = 'Wind: ' +  Math.round(data.list[4].wind.speed) + " mph";
  descriptionDisplay5.innerHTML = data.list[1].weather[0].description;
 
  }
@@ -344,22 +344,25 @@ else if(campGround === "Blue West"){
 
   })
 
-  function loadStorage(){
-    //parses string of camp names into an array of camp names
-    var savedCampgrounds = JSON.parse(localStorage.getItem('Camp'))
-    if (savedCampgrounds===null) {
-      localStorage.setItem('Camp', JSON.stringify([])) //creates array of camp names if there were none in storage to retrieve
-      return
-    }
-    console.log("saved camp logged below")
-    console.log(savedCampgrounds);
-  //iterate through the array and append information to the screen that you want to persist based on the saved camp names
-  for (var i = 0; i < savedCampgrounds.length; i++) {
-  
-  }
-}
 
 
+
+//   function loadStorage(){
+//     //parses string of camp names into an array of camp names
+//     var savedCampgrounds = JSON.parse(localStorage.getItem('Camp'))
+//     if (savedCampgrounds===null) {
+//       localStorage.setItem('Camp', JSON.stringify([])) //creates array of camp names if there were none in storage to retrieve
+//       return
+//     }
+//     console.log("saved camp logged below")
+//     console.log(savedCampgrounds);
+//   //iterate through the array and append information to the screen that you want to persist based on the saved camp names
+//   for (var i = 0; i < savedCampgrounds.length; i++) {
+//   console.log('processing'+ savedCampgrounds[i])
+//   }
+// }
+
+// loadStorage();
 
 LatLongWeather()
 
