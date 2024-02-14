@@ -5,7 +5,8 @@
     --text: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 #hero-image img {
-width: 100%
+width: 1920px;
+height: 720px;
 }
 .title{
     font-family: var(--headaer);
@@ -141,4 +142,10 @@ flex-direction: column;
 /* added margin to campground search bar CO*/
 #camp-search {
     margin: 1%;
+}
+ul.a {
+    list-style-type: circle;
+}
+#campground-details {
+    list-style-type: circle;
 }
