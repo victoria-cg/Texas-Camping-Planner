@@ -92,6 +92,7 @@ flex-direction: column;
 
     #myBtn:hover{
         background-color: #292929;
+        cursor: pointer;
        }
        
   .modal {
@@ -138,6 +139,11 @@ flex-direction: column;
   #searchBtn {
     background-color: #363636;
     color: #fff;
+}
+
+/*made cursor a pointer when hovering on search button*/
+#searchBtn:hover {
+    cursor: pointer;
 }
 
 /* made Choose Your About and Weather Conditions bigger CO */
