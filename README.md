@@ -34,6 +34,9 @@ W3 Schools. (1993-2024). How To Make a Modal Box With CSS and JavaScript. W3Scho
 Reference for use of modals with Bulma CSS library:
 Thomas, J. (n.d.). Modal. Bulma. Retrieved February 8, 2024, from https://bulma.io/documentation/components/modal/
 
+Reference for Bulma CSS libary nav and burger menu syntax:
+Thomas, J. (n.d.). Navbar. Bulma. Retrieved April 23, 2024, from https://bulma.io/documentation/components/navbar/#navbar-burger
+
 Reference for use of arrays and localStorage:
 Kirupa. (2012, November 5). Storing and Retrieving an Array from Local Storage | kirupa.com. KIRUPA. Retrieved February 13, 2024, from https://www.kirupa.com/html5/storing_and_retrieving_an_array_from_local_storage.htm
 
